@@ -1,0 +1,3 @@
+The script setup-initial-db.sh references to data/data.sql
+where any SQL command (for sqlite) can be included for the
+initial DB.

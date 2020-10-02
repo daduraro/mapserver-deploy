@@ -1,0 +1,11 @@
+# mapserver deploy
+
+This repository has all the necessary scripts to build (using docker) the mapserver and a docker-compose.yml template file to setup a docker container with the mapserver and nginx-proxy reverse proxy.
+
+## Docker-compose setup
+
+Environment variables for docker-compose (can be added with a .env file):
+  - DC_NGINX_CERTS_MOUNT: certs volume to mount with mapserver.crt and mapserver.key certificates.
+  - DC_NGINX_PROXY_CONF_MOUNT: path to a configure file for nginx-proxy.
+  - DC_MAPSERVER_VIRTUAL_HOST: refer to nginx-proxy VIRTUAL_HOST variable.
+  - DC_MAPSERVER_DATA_MOUNT: directory where map.db and maps/* are expected.

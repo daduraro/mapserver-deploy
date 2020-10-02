@@ -1,0 +1,6 @@
+[submodule "web"]
+	path = web
+	url = ../repos/web
+[submodule "server"]
+	path = server
+	url = ../repos/server

@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  reverse:
+    image: jwilder/nginx-proxy
+    restart: always
+    ports:
+      - "8800:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ${DC_NGINX_CERTS_MOUNT}:/etc/nginx/certs
+      - ${DC_NGINX_PROXY_CONF_MOUNT}:/etc/nginx/conf.d/my_proxy.conf:ro
+    networks:
+      - web
+
+  mapserver:
+    image: daduraro/mapserver:latest
+    restart: always
+    depends_on:
+      - reverse
+    environment:
+      - VIRTUAL_HOST=${DC_MAPSERVER_VIRTUAL_HOST}
+      - HTTPS_METHOD=nohttp
+      - CERT_NAME=mapserver
+    networks:
+      - web
+    volumes:
+      - ${DC_MAPSERVER_DATA_MOUNT}:/mnt/data
+
+networks:
+  web:
