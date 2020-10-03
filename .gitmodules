@@ -1,6 +1,6 @@
 [submodule "web"]
 	path = web
-	url = ../repos/web
+	url = ../repos/web.git
 [submodule "server"]
 	path = server
-	url = ../repos/server
+	url = ../repos/server.git
