@@ -1,6 +1,6 @@
 [submodule "web"]
 	path = web
-	url = ../repos/web.git
+	url = git@github.com:daduraro/mapserver-web.git
 [submodule "server"]
 	path = server
-	url = ../repos/server.git
+	url = https://github.com/daduraro/mapserver-server
