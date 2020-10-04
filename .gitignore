@@ -1,3 +1,4 @@
 data/
 volumes/
 /.env
+build/

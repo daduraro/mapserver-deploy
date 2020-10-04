@@ -11,6 +11,7 @@ FROM ${WEB_BUILD_IMAGE} as web-builder
 WORKDIR /home/node/src
 ADD --chown=node:node web ./
 RUN npm install
+RUN npm audit fix
 RUN npm run build
 
 FROM alpine:latest
